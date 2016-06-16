@@ -177,6 +177,15 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        'nova_flavor': {
+            'allow_post': True,
+            'allow_put': False,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': False,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         }
     },
     SCALING_POLICIES: {
