@@ -1,15 +1,14 @@
 # Copyright (C) 2016 A10 Networks Inc. All rights reserved.
 
-EXTENSION = 'a10-certificates'
+EXTENSION = 'a10-certificate'
 
-SERVICE = "A10_CERTIFICATES"
+SERVICE = "A10_CERTIFICATE"
 
 CERTIFICATES = 'a10_certificates'
 CERTIFICATE = 'a10_certificate'
 
 CERTIFICATE_BINDING = 'a10_certificate_binding'
 CERTIFICATE_BINDINGS = 'a10_certificate_bindings'
-
 
 RESOURCE_ATTRIBUTE_MAP = {
     CERTIFICATES: {
@@ -84,8 +83,9 @@ RESOURCE_ATTRIBUTE_MAP = {
 
         }
     },
+
     CERTIFICATE_BINDINGS: {
-            'id': {
+        'id': {
             'allow_post': False,
             'allow_put': False,
             'is_visible': True,
