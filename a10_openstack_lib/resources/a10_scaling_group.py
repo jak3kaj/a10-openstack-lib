@@ -1,5 +1,6 @@
 # Copyright (C) 2016 A10 Networks Inc. All rights reserved.
 
+
 EXTENSION = 'a10-scaling-group'
 
 SERVICE = "A10_SCALING_GROUP"
@@ -65,9 +66,9 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_post': True,
             'allow_put': True,
             'validate': {
-                'a10_type:nullable': {
+                'type:a10_nullable': {
                     'type:uuid': None,
-                    'a10_type:reference': SCALING_POLICY
+                    'type:a10_reference': SCALING_POLICY
                 }
             },
             'is_visible': True,
@@ -113,7 +114,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_put': False,
             'validate': {
                 'type:uuid': None,
-                'a10_type:reference': SCALING_GROUP
+                'type:a10_reference': SCALING_GROUP
             },
             'is_visible': True
         },
@@ -246,7 +247,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_post': True,
             'allow_put': True,
             'validate': {
-                'a10_type:nullable': {
+                'type:a10_nullable': {
                     'type:non_negative': None
                 }
             },
@@ -327,7 +328,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_post': True,
             'allow_put': True,
             'validate': {
-                'a10_type:float': None
+                'type:a10_float': None
             },
             'convert_to': lambda attr: convert_to_float,
             'is_visible': True
@@ -432,6 +433,8 @@ def convert_to_float(input):
 
 def convert_nullable(convert_value):
     def f(input):
+        import pdb
+        pdb.set_trace()
         if input is not None:
             return convert_value(input)
         return None
@@ -460,7 +463,7 @@ def validate_nullable(validators):
 
 
 VALIDATORS = {
-    'a10_type:float': lambda validators: validate_float,
-    'a10_type:reference': lambda validators: validate_reference,
-    'a10_type:nullable': validate_nullable
+    'type:a10_float': lambda validators: validate_float,
+    'type:a10_reference': lambda validators: validate_reference,
+    'type:a10_nullable': validate_nullable
 }
