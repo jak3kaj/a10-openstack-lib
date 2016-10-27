@@ -433,8 +433,6 @@ def convert_to_float(input):
 
 def convert_nullable(convert_value):
     def f(input):
-        import pdb
-        pdb.set_trace()
         if input is not None:
             return convert_value(input)
         return None
