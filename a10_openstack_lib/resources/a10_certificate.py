@@ -168,10 +168,7 @@ def validate_nullable(validators):
 
 
 VALIDATORS = {
-    'a10_type:float': lambda validators: validate_float,
-    'a10_type:reference': lambda validators: validate_reference,
-    'a10_type:nullable': validate_nullable
+    'type:a10_float': lambda validators: validate_float,
+    'type:a10_reference': lambda validators: validate_reference,
+    'type:a10_nullable': validate_nullable
 }
-
-
-
