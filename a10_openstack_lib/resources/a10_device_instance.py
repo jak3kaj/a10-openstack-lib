@@ -12,8 +12,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from neutron_lib.api import converters
-
 EXTENSION = 'a10-device-instance'
 
 SERVICE = "A10_DEVICE_INSTANCE"
@@ -125,7 +123,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_put': True,
             'is_visible': False,
             'default': [],
-            'convert_to':
             'convert_list_to': lambda attr: attr.convert_to_list
         },
         'image': {
