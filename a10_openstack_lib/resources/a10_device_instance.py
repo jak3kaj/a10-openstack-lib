@@ -156,3 +156,40 @@ def convert_to_lower(input):
         return input.lower()
     except AttributeError:
         return input
+
+
+def convert_to_int(input):
+    try:
+        return int(input)
+    except ValueError:
+        return 0
+
+
+class AttributesLibWrapper(object):
+    """Neutron lib moves stuff. Move it back."""
+
+    def __init__(self, attributes):
+        self._attributes = attributes
+        self._converters = getattr(attributes, 'converters', {})
+        self._validators = getattr(attributes, 'validators', {})
+
+    def __getattr__(self, key):
+        try:
+            return getattr(self._attributes, key)
+        except:
+            pass
+
+        # Maybe it moved to converters
+        try:
+            return getattr(self._attributes.converters, key)
+        except:
+            pass
+
+        # Maybe it moved to validators
+        try:
+            return getattr(self._attributes.validators, key)
+        except:
+            pass
+
+        # Dave's not here, man
+        return self.__getattribute__(key)
