@@ -258,7 +258,7 @@ RESOURCE_ATTRIBUTE_MAP = {
         'reactions': {
             'allow_post': True,
             'allow_put': True,
-            'convert_to': lambda attr: attr.convert_to_list,
+            'convert_list_to': lambda attr: attr.convert_kvp_list_to_dict,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         }
