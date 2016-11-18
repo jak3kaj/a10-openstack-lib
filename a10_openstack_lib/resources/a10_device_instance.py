@@ -60,7 +60,8 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_visible': True
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'username': {
             'allow_post': True,
@@ -68,7 +69,8 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_visible': True
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'password': {
             'allow_post': True,
@@ -76,7 +78,8 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_visible': False
+            'is_visible': False,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'api_version': {
             'allow_post': True,
@@ -84,7 +87,8 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:values': ['2.1', '3.0']
             },
-            'is_visible': True
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'protocol': {
             'allow_post': True,
