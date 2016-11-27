@@ -4,7 +4,7 @@
 from setuptools import setup, find_packages
 setup(
     name = "a10-openstack-lib",
-    version = "0.1.0",
+    version = "0.1.1",
     packages = find_packages(),
 
     author = "A10 Networks",

@@ -60,7 +60,8 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_visible': True
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'username': {
             'allow_post': True,
@@ -68,7 +69,8 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_visible': True
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'password': {
             'allow_post': True,
@@ -76,7 +78,8 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_visible': False
+            'is_visible': False,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'api_version': {
             'allow_post': True,
@@ -114,7 +117,33 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        'networks': {
+            'allow_post': True,
+            'allow_put': True,
+            'is_visible': False,
+            'default': [],
+            'convert_list_to': lambda attr: attr.convert_to_list
+        },
+        'image': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None,
+            },
+            'is_visible': False,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        'flavor': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None,
+            },
+            'is_visible': False,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         }
+
     }
 }
 
