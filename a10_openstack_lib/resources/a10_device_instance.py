@@ -87,7 +87,8 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:values': ['2.1', '3.0']
             },
-            'is_visible': True
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'protocol': {
             'allow_post': True,
