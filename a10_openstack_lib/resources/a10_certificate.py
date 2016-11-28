@@ -63,7 +63,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_visible': True,
+            'is_visible': False,
         },
         'key_data': {
             'allow_post': True,
@@ -71,7 +71,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_visible': True,
+            'is_visible': False,
             'default': ''
         },
         'intermediate_data': {
@@ -80,7 +80,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None,
             },
-            'is_visible': True,
+            'is_visible': False,
             'default': ''
         },
         'password': {
@@ -89,7 +89,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None,
             },
-            'is_visible': True,
+            'is_visible': False,
             'default': ''
 
         }
