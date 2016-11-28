@@ -64,7 +64,7 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:string': None
             },
             'is_visible': True,
-            'default': ''
+            'required_by_policy': True
         },
         'key_data': {
             'allow_post': True,
