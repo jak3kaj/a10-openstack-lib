@@ -59,7 +59,7 @@ RESOURCE_ATTRIBUTE_MAP = {
         },
         'cert_data': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None
             },
@@ -67,7 +67,7 @@ RESOURCE_ATTRIBUTE_MAP = {
         },
         'key_data': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None
             },
@@ -76,7 +76,7 @@ RESOURCE_ATTRIBUTE_MAP = {
         },
         'intermediate_data': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None,
             },
@@ -85,7 +85,7 @@ RESOURCE_ATTRIBUTE_MAP = {
         },
         'password': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None,
             },
