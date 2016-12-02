@@ -59,38 +59,37 @@ RESOURCE_ATTRIBUTE_MAP = {
         },
         'cert_data': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None
             },
-            'is_visible': True,
-            'default': ''
+            'is_visible': False,
         },
         'key_data': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None
             },
-            'is_visible': True,
+            'is_visible': False,
             'default': ''
         },
         'intermediate_data': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None,
             },
-            'is_visible': True,
+            'is_visible': False,
             'default': ''
         },
         'password': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None,
             },
-            'is_visible': True,
+            'is_visible': False,
             'default': ''
 
         }
