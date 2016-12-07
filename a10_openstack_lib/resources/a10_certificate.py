@@ -74,7 +74,6 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:string': None
             },
             'is_visible': False,
-            'default': ''
         },
         'intermediate_data': {
             'allow_post': True,
