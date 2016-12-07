@@ -12,6 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import validators
+
 EXTENSION = 'a10-certificate'
 
 SERVICE = "A10_CERTIFICATE"
@@ -114,12 +116,20 @@ RESOURCE_ATTRIBUTE_MAP = {
         'certificate_id': {
             'allow_post': True,
             'allow_put': True,
-            'is_visible': True
+            'is_visible': True,
+            'validate': {
+                'type:uuid': None,
+                'type:a10_reference': CERTIFICATE,
+            },
         },
         'listener_id': {
             'allow_post': True,
             'allow_put': True,
-            'is_visible': True
+            'is_visible': True,
+            'validate': {
+                'type:uuid': None,
+                'type:a10_reference': "listener",
+            },
         },
         'listener_name': {
             'allow_post': False,
@@ -134,52 +144,4 @@ RESOURCE_ATTRIBUTE_MAP = {
     }
 }
 
-
-def convert_to_lower(input):
-    try:
-        return input.lower()
-    except AttributeError:
-        return input
-
-
-def convert_to_float(input):
-    try:
-        return float(input)
-    except ValueError:
-        return input
-
-
-def convert_nullable(convert_value):
-    def f(input):
-        if input is not None:
-            return convert_value(input)
-        return None
-    return f
-
-
-def validate_float(data, options):
-    if not isinstance(data, float):
-        return "'%s' is not a number" % input
-
-
-def validate_reference(data, options):
-    """Referential integrity is enforced by the data model"""
-    return None
-
-
-def validate_nullable(validators):
-    def f(data, options):
-        if data is not None:
-            for rule in options:
-                value_validator = validators[rule]
-                reason = value_validator(data, options[rule])
-                if reason:
-                    return reason
-    return f
-
-
-VALIDATORS = {
-    'a10_type:float': lambda validators: validate_float,
-    'a10_type:reference': lambda validators: validate_reference,
-    'a10_type:nullable': validate_nullable
-}
+VALIDATORS = validators.VALIDATORS
