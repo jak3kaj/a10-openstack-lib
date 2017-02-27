@@ -56,8 +56,25 @@ def validate_nullable(validators):
     return f
 
 
+def validate_list(validators):
+    def f(data, options):
+        try:
+            values = iter(data)
+        except TypeError:
+            return "'%s' is not a list" % input
+
+        for value in values:
+            for rule in options:
+                value_validator = validators[rule]
+                reason = value_validator(value, options[rule])
+                if reason:
+                    return reason
+    return f
+
+
 VALIDATORS = {
     'type:a10_float': lambda validators: validate_float,
     'type:a10_reference': lambda validators: validate_reference,
-    'type:a10_nullable': validate_nullable
+    'type:a10_nullable': validate_nullable,
+    'type:a10_list': validate_list
 }

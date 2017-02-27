@@ -113,24 +113,39 @@ RESOURCE_ATTRIBUTE_MAP = {
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'nova_instance_id': {
-            'allow_post': True,
-            'allow_put': True,
+            'allow_post': False,
+            'allow_put': False,
             'validate': {
                 'type:uuid': None
             },
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
-        'networks': {
+        'management_network': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
+            'validate': {
+                'type:string': None,
+            },
             'is_visible': False,
-            'default': [],
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED,
+            'convert_list_to': lambda attr: attr.convert_to_list
+        },
+        'data_networks': {
+            'allow_post': True,
+            'allow_put': False,
+            'validate': {
+                'type:a10_list': {
+                    'type:string': None,
+                }
+            },
+            'is_visible': False,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED,
             'convert_list_to': lambda attr: attr.convert_to_list
         },
         'image': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None,
             },
@@ -139,7 +154,7 @@ RESOURCE_ATTRIBUTE_MAP = {
         },
         'flavor': {
             'allow_post': True,
-            'allow_put': True,
+            'allow_put': False,
             'validate': {
                 'type:string': None,
             },
