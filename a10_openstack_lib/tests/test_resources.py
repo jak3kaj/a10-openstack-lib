@@ -16,7 +16,7 @@ import mock
 import unittest
 
 import a10_openstack_lib.resources.a10_certificate as a10_certificate
-import a10_openstack_lib.resources.a10_device_instance as a10_device_instance
+import a10_openstack_lib.resources.a10_device as a10_device
 import a10_openstack_lib.resources.a10_scaling_group as a10_scaling_group
 import a10_openstack_lib.resources.template as template
 
@@ -39,8 +39,8 @@ class TestResources(unittest.TestCase):
     def test_a10_certificate(self):
         self.check_resource_attribute_map(a10_certificate.RESOURCE_ATTRIBUTE_MAP)
 
-    def test_a10_device_instance(self):
-        self.check_resource_attribute_map(a10_device_instance.RESOURCE_ATTRIBUTE_MAP)
+    def test_a10_device(self):
+        self.check_resource_attribute_map(a10_device.RESOURCE_ATTRIBUTE_MAP)
 
     def test_a10_scaling_group(self):
         self.check_resource_attribute_map(a10_scaling_group.RESOURCE_ATTRIBUTE_MAP)
