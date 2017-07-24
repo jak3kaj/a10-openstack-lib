@@ -13,6 +13,12 @@
 #    under the License.
 
 
+def convert_to_boolean(input):
+    if input:
+        return True
+    else:
+        return False
+
 def convert_to_lower(input):
     try:
         return input.lower()
