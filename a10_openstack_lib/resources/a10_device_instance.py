@@ -18,11 +18,17 @@ EXTENSION = 'a10-device-instance'
 
 SERVICE = "A10_DEVICE_INSTANCE"
 
-RESOURCES = 'a10_device_instances'
-RESOURCE = 'a10_device_instance'
+DEVICES = 'a10_device_instances'
+DEVICE = 'a10_device_instance'
+
+DEVICE_KEYS = 'a10_device_key'
+DEVICE_KEY = 'a10_device_key'
+
+DEVICE_VALUES = 'a10_device_values'
+DEVICE_VALUE = 'a10_device_value'
 
 RESOURCE_ATTRIBUTE_MAP = {
-    RESOURCES: {
+    DEVICES: {
         'id': {
             'allow_post': False,
             'allow_put': True,
@@ -162,5 +168,85 @@ RESOURCE_ATTRIBUTE_MAP = {
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         }
 
+    },
+
+    DEVICE_KEYS: {
+        'id': {
+            'allow_post': False,
+            'allow_put': False,
+            'is_visible': True,
+            'primary_key': True,
+            'validate': {
+                'type:uuid': None
+            }
+        }, 
+        'name': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': ''
+        },
+        'description': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': '',
+        },    
+    },
+
+    DEVICE_VALUES: {
+        'id': {
+            'allow_post': False,
+            'allow_put': False,
+            'is_visible': True,
+            'primary_key': True,
+            'validate': {
+                'type:uuid': None
+            }
+        },
+        'name': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': ''
+        },
+        'description': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': '',
+        },
+        'key_id': {
+            'allow_post': True,
+            'allow_put': True,
+            'is_visible': True,
+            'validate': {
+                'type:uuid': None,
+                'type:a10_reference': DEVICE_KEY,
+            },
+        },
+        'device_id': {
+            'allow_post': True,
+            'allow_put': True,
+            'is_visible': True,
+            'validate': {
+                'type:uuid': None,
+                'type:a10_reference': DEVICE,
+            },
+        },
     }
 }
+
+VALIDATORS = validators.VALIDATORS
