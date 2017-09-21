@@ -210,7 +210,7 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:uuid': None
             }
         },
-        'name': {
+        'value': {
             'allow_post': True,
             'allow_put': True,
             'validate': {
@@ -218,15 +218,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'is_visible': True,
             'default': ''
-        },
-        'description': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:string': None
-            },
-            'is_visible': True,
-            'default': '',
         },
         'key_id': {
             'allow_post': True,
