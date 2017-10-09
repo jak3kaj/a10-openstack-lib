@@ -14,21 +14,24 @@
 
 import validators
 
-EXTENSION = 'a10-device-instance'
+EXTENSION = 'a10-device'
 
-SERVICE = "A10_DEVICE_INSTANCE"
+SERVICE = "A10_DEVICE"
 
-DEVICES = 'a10_device_instances'
-DEVICE = 'a10_device_instance'
+VTHUNDERS = 'a10_vthunder'
+VTHUNDER = 'a10_vthunder'
 
-DEVICE_KEYS = 'a10_device_key'
+DEVICES = 'a10_devices'
+DEVICE = 'a10_device'
+
+DEVICE_KEYS = 'a10_device_keys'
 DEVICE_KEY = 'a10_device_key'
 
 DEVICE_VALUES = 'a10_device_values'
 DEVICE_VALUE = 'a10_device_value'
 
 RESOURCE_ATTRIBUTE_MAP = {
-    DEVICES: {
+    VTHUNDERS: {
         'id': {
             'allow_post': False,
             'allow_put': True,
@@ -168,6 +171,92 @@ RESOURCE_ATTRIBUTE_MAP = {
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         }
 
+    },
+
+    DEVICES: {
+        'id': {
+            'allow_post': False,
+            'allow_put': True,
+            'validate': {
+                'type:uuid': None
+            },
+            'is_visible': True,
+            'primary_key': True
+        },
+        'name': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': ''
+        },
+        'description': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': '',
+        },
+        'host': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        'username': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        'password': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': False,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        'api_version': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:values': ['2.1', '3.0']
+            },
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        'protocol': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:values': ['http', 'https']
+            },
+            'is_visible': True,
+            'convert_to': lambda attr: validators.convert_to_lower,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        'port': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:range': [0, 65535]
+            },
+            'convert_to': lambda attr: attr.convert_to_int,
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        }
     },
 
     DEVICE_KEYS: {
