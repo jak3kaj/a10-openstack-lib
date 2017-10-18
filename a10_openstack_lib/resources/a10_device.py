@@ -183,6 +183,12 @@ RESOURCE_ATTRIBUTE_MAP = {
             'is_visible': True,
             'primary_key': True
         },
+        'tenant_id': {
+            'allow_post': True,
+            'allow_put': False,
+            'required_by_policy': True,
+            'is_visible': True
+        },
         'name': {
             'allow_post': True,
             'allow_put': True,
@@ -256,8 +262,114 @@ RESOURCE_ATTRIBUTE_MAP = {
             'convert_to': lambda attr: attr.convert_to_int,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
-        }
-    },
+        },
+        'autosnat': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:boolean': None,
+            },
+            'is_visible': True,
+            'default': False
+        },
+        'v_method': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:values': ['LSI', 'ADP'],
+            },
+            'is_visible': True,
+            'default': 'LSI'
+        },
+        'status': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:boolean': None,
+            },
+            'is_visible': True,
+            'default': True 
+        },    
+        'source_nat_pool': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': ''
+        },
+        'use_float': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:boolean': None,
+            },
+            'is_visible': True,
+            'default': False
+        },
+        'ipinip': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:boolean': None,
+            },
+            'is_visible': True,
+            'default': False
+        },
+        'write_memory': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:boolean': None,
+            },
+            'is_visible': True,
+            'default': False
+        },
+        'shared_partition': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None,
+            },
+            'is_visible': True,
+            'default': 'shared'
+        },
+
+        'ha_sync_list': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:a10_list': {
+                    'type:string': None,
+                }
+            },
+            'is_visible': True,
+            'convert_list_to': lambda attr: attr.convert_to_list,
+            'default': []
+        },
+        'default_virtual_server_vrid': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:a10_nullable': {
+                    'type:int': None,
+                },
+            },
+            'is_visible': True,
+            'default': None
+        },
+        'conn-limit': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:range': [0, 8000000]
+            },
+            'convert_to': lambda attr: attr.convert_to_int,
+            'is_visible': True,
+            'default': 8000000
+        },
+   },
 
     DEVICE_KEYS: {
         'id': {
@@ -268,6 +380,12 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:uuid': None
             }
+        },
+        'tenant_id': {
+            'allow_post': True,
+            'allow_put': False,
+            'required_by_policy': True,
+            'is_visible': True
         }, 
         'name': {
             'allow_post': True,
@@ -276,7 +394,7 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:string': None
             },
             'is_visible': True,
-            'default': ''
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'description': {
             'allow_post': True,
@@ -299,6 +417,12 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:uuid': None
             }
         },
+        'tenant_id': {
+            'allow_post': True,
+            'allow_put': False,
+            'required_by_policy': True,
+            'is_visible': True
+        },
         'value': {
             'allow_post': True,
             'allow_put': True,
@@ -306,7 +430,7 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:string': None
             },
             'is_visible': True,
-            'default': ''
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'key_id': {
             'allow_post': True,
@@ -316,6 +440,7 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:uuid': None,
                 'type:a10_reference': DEVICE_KEY,
             },
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'device_id': {
             'allow_post': True,
@@ -325,6 +450,7 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:uuid': None,
                 'type:a10_reference': DEVICE,
             },
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
     }
 }
