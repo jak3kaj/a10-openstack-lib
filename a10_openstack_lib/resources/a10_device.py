@@ -442,7 +442,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
-        'device_id': {
+        'associated_obj_id': {
             'allow_post': True,
             'allow_put': True,
             'is_visible': True,
