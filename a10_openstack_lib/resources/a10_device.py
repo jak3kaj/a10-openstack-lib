@@ -335,7 +335,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'is_visible': True,
             'default': 'shared'
         },
-
         'ha_sync_list': {
             'allow_post': True,
             'allow_put': True,
