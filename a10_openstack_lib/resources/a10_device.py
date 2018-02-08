@@ -13,6 +13,7 @@
 #    under the License.
 
 import validators
+from neutron_lib.api import converters
 
 EXTENSION = 'a10-device'
 
@@ -368,6 +369,16 @@ RESOURCE_ATTRIBUTE_MAP = {
             'is_visible': True,
             'default': 8000000
         },
+        'config': {
+           'allow_post': True, 
+           'allow_put': True,
+            'validate': {
+                'type:string': None,
+            },
+            'convert_list_to': lambda attr: attr.convert_kvp_list_to_dict,
+            'is_visibile': True,
+            'default': '',
+       }
    },
 
     DEVICE_KEYS: {
