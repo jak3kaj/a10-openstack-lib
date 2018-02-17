@@ -16,8 +16,7 @@ import mock
 import unittest
 
 import a10_openstack_lib.resources.a10_certificate as a10_certificate
-import a10_openstack_lib.resources.a10_device_config as a10_device_config
-import a10_openstack_lib.resources.a10_device_instance as a10_device_instance
+import a10_openstack_lib.resources.a10_device as a10_device
 import a10_openstack_lib.resources.a10_scaling_group as a10_scaling_group
 import a10_openstack_lib.resources.template as template
 
