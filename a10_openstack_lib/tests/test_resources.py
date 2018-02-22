@@ -39,11 +39,8 @@ class TestResources(unittest.TestCase):
     def test_a10_certificate(self):
         self.check_resource_attribute_map(a10_certificate.RESOURCE_ATTRIBUTE_MAP)
 
-    def test_a10_device_config(self):
-        self.check_resource_attribute_map(a10_device_config.RESOURCE_ATTRIBUTE_MAP)
-
-    def test_a10_device_instance(self):
-        self.check_resource_attribute_map(a10_device_instance.RESOURCE_ATTRIBUTE_MAP)
+    def test_a10_device(self):
+        self.check_resource_attribute_map(a10_device.RESOURCE_ATTRIBUTE_MAP)
 
     def test_a10_scaling_group(self):
         self.check_resource_attribute_map(a10_scaling_group.RESOURCE_ATTRIBUTE_MAP)

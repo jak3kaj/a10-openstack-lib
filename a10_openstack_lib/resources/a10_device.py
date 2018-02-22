@@ -12,8 +12,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import validators
 from neutron_lib.api import converters
+import validators
 
 EXTENSION = 'a10-device'
 
@@ -375,7 +375,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None,
             },
-            'convert_list_to': lambda attr: attr.convert_kvp_list_to_dict,
+            'convert_list_to': lambda attr: converters.convert_kvp_list_to_dict,
             'is_visibile': True,
             'default': '',
        }
