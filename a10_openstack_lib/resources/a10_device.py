@@ -19,8 +19,8 @@ EXTENSION = 'a10-device'
 
 SERVICE = "A10_DEVICE"
 
-VTHUNDERS = 'vthunders'
-VTHUNDER = 'vthunder'
+VTHUNDERS = 'a10_vthunders'
+VTHUNDER = 'a10_vthunder'
 
 DEVICES = 'a10_devices'
 DEVICE = 'a10_device'
