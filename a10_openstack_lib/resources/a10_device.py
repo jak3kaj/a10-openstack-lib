@@ -378,7 +378,18 @@ RESOURCE_ATTRIBUTE_MAP = {
             'convert_list_to': lambda attr: converters.convert_kvp_list_to_dict,
             'is_visibile': True,
             'default': '',
-       }
+       },
+        'a10_opts': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:a10_list': {
+                    'type:string': None,
+                }
+            },
+            'is_visible': True,
+            'default': []
+        }
    },
 
     DEVICE_KEYS: {
