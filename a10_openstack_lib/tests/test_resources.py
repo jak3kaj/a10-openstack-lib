@@ -12,13 +12,14 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import mock
 import unittest
 
 import a10_openstack_lib.resources.a10_certificate as a10_certificate
 import a10_openstack_lib.resources.a10_device as a10_device
 import a10_openstack_lib.resources.a10_scaling_group as a10_scaling_group
 import a10_openstack_lib.resources.template as template
+
+import mock
 
 
 class TestResources(unittest.TestCase):

@@ -19,6 +19,7 @@ def convert_to_boolean(input):
     else:
         return False
 
+
 def convert_to_lower(input):
     try:
         return input.lower()
