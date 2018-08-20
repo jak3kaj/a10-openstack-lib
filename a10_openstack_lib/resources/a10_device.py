@@ -326,7 +326,7 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:boolean': None,
             },
             'is_visible': True,
-            'default': False
+            'default': True
         },
         'shared_partition': {
             'allow_post': True,
