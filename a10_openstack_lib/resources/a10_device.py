@@ -13,6 +13,7 @@
 #    under the License.
 
 from neutron_lib.api import converters
+
 import validators
 
 EXTENSION = 'a10-device'
@@ -289,8 +290,8 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:boolean': None,
             },
             'is_visible': True,
-            'default': True 
-        },    
+            'default': True
+        },
         'source_nat_pool': {
             'allow_post': True,
             'allow_put': True,
@@ -370,15 +371,15 @@ RESOURCE_ATTRIBUTE_MAP = {
             'default': 8000000
         },
         'config': {
-           'allow_post': True, 
-           'allow_put': True,
+            'allow_post': True,
+            'allow_put': True,
             'validate': {
                 'type:string': None,
             },
             'convert_list_to': lambda attr: converters.convert_kvp_list_to_dict,
             'is_visibile': True,
             'default': '',
-       },
+        },
         'a10_opts': {
             'allow_post': True,
             'allow_put': True,
@@ -390,7 +391,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'is_visible': True,
             'default': []
         }
-   },
+    },
 
     DEVICE_KEYS: {
         'id': {
@@ -407,7 +408,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_put': False,
             'required_by_policy': True,
             'is_visible': True
-        }, 
+        },
         'name': {
             'allow_post': True,
             'allow_put': True,
@@ -425,7 +426,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'is_visible': True,
             'default': '',
-        },    
+        },
     },
 
     DEVICE_VALUES: {
