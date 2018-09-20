@@ -40,7 +40,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:uuid': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'primary_key': True
         },
@@ -48,7 +47,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_post': True,
             'allow_put': False,
             'required_by_policy': True,
-            'is_a10_opt': False,
             'is_visible': True
         },
         'name': {
@@ -57,7 +55,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': ''
         },
@@ -67,7 +64,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': '',
         },
@@ -77,7 +73,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -87,7 +82,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -97,7 +91,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': False,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -107,7 +100,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:values': ['2.1', '3.0']
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -118,7 +110,6 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:values': ['http', 'https']
             },
             'is_visible': True,
-            'is_a10_opt': False,
             'convert_to': lambda attr: validators.convert_to_lower,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -129,7 +120,6 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:range': [0, 65535]
             },
             'convert_to': lambda attr: attr.convert_to_int,
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -139,52 +129,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:uuid': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
-            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
-        },
-        'management_network': {
-            'allow_post': True,
-            'allow_put': False,
-            'validate': {
-                'type:string': None,
-            },
-            'is_a10_opt': True,
-            'is_visible': False,
-            'default': lambda attr: attr.ATTR_NOT_SPECIFIED,
-            'convert_list_to': lambda attr: attr.convert_to_list
-        },
-        'data_networks': {
-            'allow_post': True,
-            'allow_put': False,
-            'validate': {
-                'type:a10_list': {
-                    'type:string': None,
-                }
-            },
-            'is_a10_opt': True,
-            'is_visible': False,
-            'default': lambda attr: attr.ATTR_NOT_SPECIFIED,
-            'convert_list_to': lambda attr: attr.convert_to_list
-        },
-        'image': {
-            'allow_post': True,
-            'allow_put': False,
-            'validate': {
-                'type:string': None,
-            },
-            'is_a10_opt': True,
-            'is_visible': False,
-            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
-        },
-        'flavor': {
-            'allow_post': True,
-            'allow_put': False,
-            'validate': {
-                'type:string': None,
-            },
-            'is_a10_opt': True,
-            'is_visible': False,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'a10_opts': {
@@ -195,7 +140,6 @@ RESOURCE_ATTRIBUTE_MAP = {
                     'type:string': None,
                 }
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': []
         }
@@ -209,7 +153,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:uuid': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'primary_key': True
         },
@@ -217,7 +160,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_post': True,
             'allow_put': False,
             'required_by_policy': True,
-            'is_a10_opt': False,
             'is_visible': True
         },
         'name': {
@@ -226,7 +168,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': ''
         },
@@ -236,7 +177,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': '',
         },
@@ -246,7 +186,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -256,7 +195,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -266,7 +204,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': False,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -276,7 +213,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:values': ['2.1', '3.0']
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -286,7 +222,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:values': ['http', 'https']
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'convert_to': lambda attr: validators.convert_to_lower,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
@@ -298,145 +233,8 @@ RESOURCE_ATTRIBUTE_MAP = {
                 'type:range': [0, 65535]
             },
             'convert_to': lambda attr: attr.convert_to_int,
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
-        },
-        'autosnat': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:boolean': None,
-            },
-            'convert_to': lambda attr: validators.convert_to_boolean,
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': False
-        },
-        'v_method': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:values': ['LSI', 'ADP'],
-            },
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': 'LSI'
-        },
-        'status': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:boolean': None,
-            },
-            'convert_to': lambda attr: validators.convert_to_boolean,
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': True
-        },
-        'source_nat_pool': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:string': None
-            },
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': ''
-        },
-        'use_float': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:boolean': None,
-            },
-            'convert_to': lambda attr: validators.convert_to_boolean,
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': False
-        },
-        'ipinip': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:boolean': None,
-            },
-            'convert_to': lambda attr: validators.convert_to_boolean,
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': False
-        },
-        'write_memory': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:boolean': None,
-            },
-            'convert_to': lambda attr: validators.convert_to_boolean,
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': True
-        },
-        'shared_partition': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:string': None,
-            },
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': 'shared'
-        },
-        'ha_sync_list': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:a10_list': {
-                    'type:string': None,
-                }
-            },
-            'is_a10_opt': True,
-            'is_visible': True,
-            'convert_list_to': lambda attr: attr.convert_to_list,
-            'default': []
-        },
-        'default_virtual_server_vrid': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:a10_nullable': {
-                    'type:int': None,
-                },
-            },
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': None
-        },
-        'conn_limit': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                'type:range': [0, 8000000]
-            },
-            'convert_to': lambda attr: attr.convert_to_int,
-            'is_a10_opt': True,
-            'is_visible': True,
-            'default': 8000000
-        },
-        'config': {
-            'allow_post': True,
-            'allow_put': True,
-            'validate': {
-                #'type:string': None,
-                'type:a10_list': {
-                    'type:string': None,
-                }
-            },
-            #'convert_list_to': lambda attr: converters.convert_kvp_list_to_dict,
-            'is_a10_opt': False,
-            'is_visibile': True,
-            #'default': '',
-            'default': [],
         },
         'a10_opts': {
             'allow_post': True,
@@ -446,7 +244,6 @@ RESOURCE_ATTRIBUTE_MAP = {
                     'type:string': None,
                 }
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': []
         }
@@ -456,7 +253,6 @@ RESOURCE_ATTRIBUTE_MAP = {
         'id': {
             'allow_post': False,
             'allow_put': False,
-            'is_a10_opt': False,
             'is_visible': True,
             'primary_key': True,
             'validate': {
@@ -467,7 +263,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_post': True,
             'allow_put': False,
             'required_by_policy': True,
-            'is_a10_opt': False,
             'is_visible': True
         },
         'name': {
@@ -476,7 +271,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
@@ -486,9 +280,31 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': '',
+        },
+        'default_value': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+        },
+        # All values are actually stored as strings.  The type parameter is
+        # required so the values types are converted properly.  List type
+        # values will simply be stored as a string and translated to a list
+        # on retrieval.
+        'type': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:values': ['boolean', 'list', 'string', 'integer', '']
+            },
+            'is_visible': True,
+            'convert_to': lambda attr: validators.convert_to_lower,
+            'default': ''
         },
     },
 
@@ -496,7 +312,6 @@ RESOURCE_ATTRIBUTE_MAP = {
         'id': {
             'allow_post': False,
             'allow_put': False,
-            'is_a10_opt': False,
             'is_visible': True,
             'primary_key': True,
             'validate': {
@@ -507,7 +322,6 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_post': True,
             'allow_put': False,
             'required_by_policy': True,
-            'is_a10_opt': False,
             'is_visible': True
         },
         'value': {
@@ -516,14 +330,12 @@ RESOURCE_ATTRIBUTE_MAP = {
             'validate': {
                 'type:string': None
             },
-            'is_a10_opt': False,
             'is_visible': True,
             'default': lambda attr: attr.ATTR_NOT_SPECIFIED
         },
         'key_id': {
             'allow_post': True,
             'allow_put': True,
-            'is_a10_opt': False,
             'is_visible': True,
             'validate': {
                 'type:uuid': None,
@@ -534,7 +346,6 @@ RESOURCE_ATTRIBUTE_MAP = {
         'associated_obj_id': {
             'allow_post': True,
             'allow_put': True,
-            'is_a10_opt': False,
             'is_visible': True,
             'validate': {
                 'type:uuid': None,
