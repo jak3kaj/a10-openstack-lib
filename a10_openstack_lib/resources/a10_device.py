@@ -111,7 +111,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'is_visible': True,
             'convert_to': lambda attr: validators.convert_to_lower,
-            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+            'default': 'https'
         },
         'port': {
             'allow_post': True,
@@ -121,7 +121,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'convert_to': lambda attr: attr.convert_to_int,
             'is_visible': True,
-            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+            'default': 443
         },
         'nova_instance_id': {
             'allow_post': False,
@@ -224,7 +224,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'is_visible': True,
             'convert_to': lambda attr: validators.convert_to_lower,
-            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+            'default': 'https'
         },
         'port': {
             'allow_post': True,
@@ -234,7 +234,7 @@ RESOURCE_ATTRIBUTE_MAP = {
             },
             'convert_to': lambda attr: attr.convert_to_int,
             'is_visible': True,
-            'default': lambda attr: attr.ATTR_NOT_SPECIFIED
+            'default': 443
         },
         'a10_opts': {
             'allow_post': True,
