@@ -12,7 +12,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import validators
+from a10_openstack_lib.resources import validators
 
 EXTENSION = 'a10-scaling-group'
 
