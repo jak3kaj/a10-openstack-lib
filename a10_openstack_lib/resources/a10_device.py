@@ -12,9 +12,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from neutron_lib.api import converters
+from a10_openstack_lib.resources import validators
 
-import validators
+from neutron_lib.api import converters
 
 EXTENSION = 'a10-device'
 
