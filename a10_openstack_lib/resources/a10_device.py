@@ -14,8 +14,6 @@
 
 from a10_openstack_lib.resources import validators
 
-from neutron_lib.api import converters
-
 EXTENSION = 'a10-device'
 
 SERVICE = "A10_DEVICE"
@@ -48,6 +46,15 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_put': False,
             'required_by_policy': True,
             'is_visible': True
+        },
+        'error': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': ''
         },
         'name': {
             'allow_post': True,
@@ -171,6 +178,15 @@ RESOURCE_ATTRIBUTE_MAP = {
             'is_visible': True,
             'default': ''
         },
+        'error': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': ''
+        },
         'description': {
             'allow_post': True,
             'allow_put': True,
@@ -265,6 +281,15 @@ RESOURCE_ATTRIBUTE_MAP = {
             'required_by_policy': True,
             'is_visible': True
         },
+        'error': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': ''
+        },
         'name': {
             'allow_post': True,
             'allow_put': True,
@@ -323,6 +348,15 @@ RESOURCE_ATTRIBUTE_MAP = {
             'allow_put': False,
             'required_by_policy': True,
             'is_visible': True
+        },
+        'error': {
+            'allow_post': True,
+            'allow_put': True,
+            'validate': {
+                'type:string': None
+            },
+            'is_visible': True,
+            'default': ''
         },
         'value': {
             'allow_post': True,
